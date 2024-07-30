@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="card_header">
+        <h1>{{ blog.title|title }}</h1>
+        <div class="info">
+            <img src="{{ blog.image }}" alt="{{ blog }} image">
+            <p>By {{ blog.author }}</p>
+            <p>Last updates on {{ blog.time }}</p>
+        </div>
+    </div>
+    <br>
+    <div class="card_footer">
+        <p>content: {{ blog.content }}</p>
+    </div>
+{% endblock content %}

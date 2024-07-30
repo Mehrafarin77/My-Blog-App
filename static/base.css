@@ -1,0 +1,157 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+    height: auto;
+    background-color: #262626;
+    color: white;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header a{
+    color: white;
+}
+
+.container{
+    width: 100%;
+    background-color: #0b4793;
+    min-width: 12rem;
+    margin: 0 auto;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .up{
+    color: white;
+    width: 70%;
+    margin:  auto;
+    padding: 1rem 0 3rem 0;
+}
+
+.container .up .card{
+    display: flex;
+    align-items: center;
+}
+
+.card img{
+    margin-right: 16px;
+}
+
+.card h1{
+    letter-spacing: 2px;
+}
+
+.down{
+    width: 100%;
+    background-color: white;
+    min-width: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.down .blogs_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 32rem;
+    margin-top: -3rem;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,.26);
+    border-radius: 15px;
+    background-color: white;
+    padding: 20px 15px;
+}
+
+.down .blogs_card .boxes{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.blogs_card h4{
+    font-size: 1.2rem;
+
+}
+
+.down .box{
+    width: 33%;
+    background-color: lightblue;
+    margin: 0 5px;
+    border-radius: 16px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.down img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid black 2px;
+}
+
+.title{
+    font-size: 14px;
+    font-weight: bold;
+    margin: 15px 0 0 0;
+}
+
+.content{
+    font-size: 12px;
+    line-height: .9rem;
+}
+
+.post_card{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem auto;
+    background-color: lightgray;
+    padding: 10px;border-radius: 10px;
+
+}
+
+.post_card img{
+    width: 150px;
+    height: 100%;
+    border-radius: 10px;
+}
+.post_card h3{
+    font-size: 14px;
+    margin: 0 1.5rem;
+}
+.post_card h4{
+    font-size: 13px;
+}
+
+.info img{
+    width: 30%;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+

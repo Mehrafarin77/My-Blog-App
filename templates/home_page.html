@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="up">
+            <div class="card">
+{#                <img src="../images/me.jpg" alt="fati photo">#}
+                <h1>FATI'S BLOG</h1>
+            </div>
+            <div class="subtitle">
+                <p>Hi, I am Fati and i love to blog ablout tech and the world!</p>
+            </div>
+        </div>
+        <div class="down">
+            <div class="blogs_card">
+                <h4>My Latest Thoughts</h4>
+                <div class="boxes">
+                    {% for post in latest %}
+                            <div class="box">
+                                <a href="{% url 'blog:post_detail' post.id %}">
+                                    <img src="{{ post.image }}" alt="{{ post }} image">
+                                </a>
+                                <p class="title">{{ post.title }}</p>
+                                <p class="content">{{ post.content }}</p>
+                            </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

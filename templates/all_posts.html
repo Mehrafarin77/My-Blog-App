@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for blog in blogs %}
+        <div class="post_card">
+            <img src="{{ blog.image }}" alt="{{ blog.title }} image">
+            <h3>{{ blog.title }}</h3>
+            <h3>{{ blog.content }}</h3>
+            <h4>Last updated on {{ blog.time }}</h4>
+        </div>
+    {% endfor %}
+{% endblock content %}
