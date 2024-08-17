@@ -1,12 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    All Posts
+{% endblock title %}
 
 {% block content %}
-    {% for blog in blogs %}
-        <div class="post_card">
-            <img src="{{ blog.image }}" alt="{{ blog.title }} image">
-            <h3>{{ blog.title }}</h3>
-            <h3>{{ blog.content }}</h3>
-            <h4>Last updated on {{ blog.time }}</h4>
-        </div>
-    {% endfor %}
+    <section class="all-posts">
+        <h2>My collected posts</h2>
+        <ul>
+            {% for post in posts %}
+                <li>
+                    <article class="post">
+                        <a href='{% url 'blog:post_detail' post.slug %}'>
+                            <img src="{{ post.image }}" alt='{{ post.title }} image'>
+                            <div class="post__content">
+                                <h3>{{ post.title }}</h3>
+                                <p>{{ post.content }}</p>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
 {% endblock content %}

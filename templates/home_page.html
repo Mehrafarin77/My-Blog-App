@@ -1,32 +1,42 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    My Blog
+{% endblock title %}
+
 
 {% block content %}
-    <div class="container">
-        <div class="up">
-            <div class="card">
-{#                <img src="../images/me.jpg" alt="fati photo">#}
-                <h1>FATI'S BLOG</h1>
-            </div>
-            <div class="subtitle">
-                <p>Hi, I am Fati and i love to blog ablout tech and the world!</p>
-            </div>
-        </div>
-        <div class="down">
-            <div class="blogs_card">
-                <h4>My Latest Thoughts</h4>
-                <div class="boxes">
-                    {% for post in latest %}
-                            <div class="box">
-                                <a href="{% url 'blog:post_detail' post.id %}">
-                                    <img src="{{ post.image }}" alt="{{ post }} image">
-                                </a>
-                                <p class="title">{{ post.title }}</p>
-                                <p class="content">{{ post.content }}</p>
-                            </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <section id="welcome">
+        <header>
+            <img src="{% static 'images/me.jpg' %}" alt="Mehrafarin - The Author of This Blog">
+            <h1>MEHRAFARIN'S BLOG</h1>
+        </header>
+        <p>Hi, i am Mehrafarin and i love to blog about tech and the world!</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+        <ul>
+            {% for post in latest_posts %}
+                <li>
+                    <a href="{% url 'blog:post_detail' post.slug %}">
+                        <div class="post">
+                        <img src="{{ post.image }}" alt="{{ post.title }}'s photo">
+                        <h4>{{ post.title }}</h4>
+                        <p>{{ post.content }}</p>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>What I Do</h2>
+        <p>I love programming, sports and singing :)</p>
+        <p>My goal is to keep growing as a developer.</p>
+    </section>
 
 {% endblock content %}

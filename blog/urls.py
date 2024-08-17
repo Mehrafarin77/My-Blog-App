@@ -1,10 +1,13 @@
 from .views import *
 from django.urls import path
+from django.http import Http404
 
 app_name = 'blog'
 urlpatterns = [
-    path('', home_page_view_and_latest_posts_view, name='home'),
-    path('blogs/<int:id>', post_detial, name='post_detail'),
-    path('blogs/', all_posts, name='all_posts'),
-    path('blogs/new', new_post, name='new_post'),
+    path('posts/<slug:slug>', post_detail, name='post_detail'),  # blogs/my-first-blog
+    path('posts/', posts, name='posts'),
+    path('', latest_posts, name='latest_posts'),
+    path('posts/delete/<slug:slug>/', delete_post, name='delete_post'),
+    path('posts/update/<slug:slug>/', update_post, name='update_post'),
+    path('new-post/', new_post, name='new_post'),
 ]

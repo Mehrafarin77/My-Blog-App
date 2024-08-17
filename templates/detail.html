@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ blog.title }}
+{% endblock title %}
 
 {% block content %}
-    <div class="card_header">
-        <h1>{{ blog.title|title }}</h1>
-        <div class="info">
-            <img src="{{ blog.image }}" alt="{{ blog }} image">
-            <p>By {{ blog.author }}</p>
-            <p>Last updates on {{ blog.time }}</p>
-        </div>
-    </div>
-    <br>
-    <div class="card_footer">
-        <p>content: {{ blog.content }}</p>
-    </div>
+    <section class="summary">
+        <h2>{{ blog.title }}</h2>
+        <article>
+            <img src="{{ blog.image }}" alt="{{ blog.title }} image">
+            <div class="info">
+                <address>By {{ blog.author }}</address>
+                <div>
+                    Last updated on <time>{{ blog.time }}</time>
+                </div>
+                <a href="{% url 'blog:delete_post' blog.slug %}" type="submit">delete post</a>
+                <a href="{% url 'blog:update_post' blog.slug %}" type="submit">update post</a>
+            </div>
+        </article>
+    </section>
+    <main>
+        <p>{{ blog.content }}</p>
+    </main>
 {% endblock content %}
