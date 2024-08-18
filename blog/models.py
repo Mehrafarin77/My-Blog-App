@@ -4,6 +4,13 @@ from django.template.defaultfilters import slugify
 from django.urls import reverse
 
 # Create your models here.
+class Tag(models.Model):
+    caption = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.caption
+
+
 class Author(models.Model):
     first_name = models.CharField(max_length=60)
     last_name = models.CharField(max_length=60)
@@ -17,6 +24,7 @@ class Blog(models.Model):
     time = models.DateTimeField(default=dt.datetime.now())
     image = models.URLField(max_length=1000, default='https://www.informaticapertutti.com/wp-content/uploads/2019/02/Che_cose_un_post.webp')
     slug = models.SlugField(editable=True, db_index=True, default='', null=False, blank=True)
+    tags = models.ManyToManyField(Tag)
 
     def get_absolute_url(self):
         return reverse('blog:post_detail', args=[self.slug])

@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div class="container">
+    <header id="new-options">
+        <nav>
+            <ul>
+                <li><a href="{% url 'blog:new_author' %}">New Author</a></li>
+                <li><a href="{% url 'blog:new_tag' %}">New Tag</a></li>
+            </ul>
+        </nav>
+    </header>
     <h1>New Post</h1>
     <br>
     <form method="POST">
@@ -8,4 +17,5 @@
         {{ form }}
         <button type="submit">Save</button>
     </form>
+    </div>
 {% endblock content %}

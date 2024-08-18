@@ -93,6 +93,17 @@ li{
     margin: 1rem auto;
     padding: 2rem;
 }
+.all-posts .post{
+    transition: all ease .2s;
+}
+.all-posts .post:hover{
+    background-color: #C9373A;
+    color: white;
+    transform: scale(1.1);
+}
+.all-posts .post:hover .post__content{
+    color: white;
+}
 .all-posts h2{
     text-align: center;
     margin: 0 0 3rem;
@@ -172,3 +183,25 @@ main {
 .summary .info div{
     margin-bottom: 3rem;
 }
+#new-options ul{
+    display: flex;
+    margin-top: 3rem;
+}
+
+#new-options a{
+    text-decoration: none;
+    margin-right: 1rem;
+}
+.container{
+    width: 65%;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+

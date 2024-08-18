@@ -63,12 +63,26 @@ def update_post(request, slug):
     return render(request, 'new_post.html', {'form':form})
 
 
+def new_author(request):
+    if request.method == 'POST':
+        form = AuthorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('blog:new_post')
+    else:
+        form = AuthorForm()
+    return render(request, 'new_author.html', {'form':form})
 
 
-
-
-
-
+def new_tag(request):
+    if request.method == 'POST':
+        form = TagForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('blog:new_post')
+    else:
+        form = TagForm()
+    return render(request, 'new_tag.html', {'form':form})
 
 
 

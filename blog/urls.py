@@ -10,4 +10,6 @@ urlpatterns = [
     path('posts/delete/<slug:slug>/', delete_post, name='delete_post'),
     path('posts/update/<slug:slug>/', update_post, name='update_post'),
     path('new-post/', new_post, name='new_post'),
+    path('new-author/', new_author, name='new_author'),
+    path('new-tag/', new_tag, name='new_tag'),
 ]

@@ -22,5 +22,9 @@
     </section>
     <main>
         <p>{{ blog.content }}</p>
+        <br><br>
+        {% for tag in blog.tags.all %}
+            <h6>#{{ tag|title }}</h6>
+        {% endfor %}
     </main>
 {% endblock content %}
