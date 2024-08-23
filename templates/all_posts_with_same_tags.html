@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Same tagged posts
+{% endblock title %}
+
+{% block content %}
+    
+{#    <ul>#}
+{#    {% for post in blogs %}#}
+{#        <li>#}
+{#            <img src="{{ post.image.url }}" alt="">#}
+{#        </li>#}
+{#    {% endfor %}#}
+{#    </ul>#}
+
+
+    <section class="all-posts">
+        <h2>{{ tag|title }}'s Posts</h2>
+        <ul>
+            {% for post in posts %}
+                <li>
+                    <article class="post">
+                        <a href='{% url 'blog:post_detail' post.pk %}'>
+                            <img src="{{ post.image.url }}" alt='{{ post.title }} image'>
+                            <div class="post__content">
+                                <h3>{{ post.title }}</h3>
+                                <p>{{ post.content }}</p>
+                            </div>
+                        </a>
+                    </article>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock content %}

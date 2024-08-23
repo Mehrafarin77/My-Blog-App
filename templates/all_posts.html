@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block title %}
     All Posts
@@ -12,8 +11,8 @@
             {% for post in posts %}
                 <li>
                     <article class="post">
-                        <a href='{% url 'blog:post_detail' post.slug %}'>
-                            <img src="{{ post.image }}" alt='{{ post.title }} image'>
+                        <a href='{% url 'blog:post_detail' post.pk %}'>
+                            <img src="{{ post.image.url }}" alt='{{ post.title }} image'>
                             <div class="post__content">
                                 <h3>{{ post.title }}</h3>
                                 <p>{{ post.content }}</p>

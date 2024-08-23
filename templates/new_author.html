@@ -7,10 +7,12 @@
 </title>
 
 {% block content %}
-    <h1>New Author</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">save</button>
-    </form>
+    <div class="container author">
+        <h1>New Author</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">save</button>
+        </form>
+    </div>
 {% endblock content %}

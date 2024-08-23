@@ -21,10 +21,10 @@
         <ul>
             {% for post in latest_posts %}
                 <li>
-                    <a href="{% url 'blog:post_detail' post.slug %}">
+                    <a href="{% url 'blog:post_detail' post.pk %}">
                         <div class="post">
-                        <img src="{{ post.image }}" alt="{{ post.title }}'s photo">
-                        <h4>{{ post.title }}</h4>
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}'s photo">
+                        <h3>{{ post.title }}</h3>
                         <p>{{ post.content }}</p>
                         </div>
                     </a>

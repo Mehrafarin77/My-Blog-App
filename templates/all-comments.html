@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    All comments
+{% endblock title %}
+
+{% block content %}
+    <div class="all-comments">
+    <h1>All comments for {{ slug }}'s post</h1>
+        <ul>
+            {% for comment in comments %}
+                <li>{{ comment }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}

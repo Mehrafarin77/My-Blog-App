@@ -1,30 +1,40 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block title %}
-    {{ blog.title }}
+    {{ post.title }}
 {% endblock title %}
 
 {% block content %}
     <section class="summary">
-        <h2>{{ blog.title }}</h2>
+        <h2>{{ post.title }}</h2>
         <article>
-            <img src="{{ blog.image }}" alt="{{ blog.title }} image">
+            <img src="{{ post.image.url }}" alt="{{ post.title }} image">
             <div class="info">
-                <address>By {{ blog.author }}</address>
+                <address>By {{ post.author }}</address>
                 <div>
-                    Last updated on <time>{{ blog.time }}</time>
+                    Last updated on <time>{{ post.time }}</time>
                 </div>
-                <a href="{% url 'blog:delete_post' blog.slug %}" type="submit">delete post</a>
-                <a href="{% url 'blog:update_post' blog.slug %}" type="submit">update post</a>
+                <a href="{% url 'blog:delete_post' post.pk %}" type="submit">delete post</a>
+                <a href="{% url 'blog:update_post' post.pk %}" type="submit">update post</a>
             </div>
         </article>
     </section>
     <main>
-        <p>{{ blog.content }}</p>
+        <p>{{ post.content }}</p>
         <br><br>
-        {% for tag in blog.tags.all %}
-            <h6>#{{ tag|title }}</h6>
+        {% for tag in post.tags.all %}
+            <h6 id="tag"><a href="{% url 'blog:all_posts_with_same_tags' slug=tag %}">#{{ tag|title }}</a></h6>
         {% endfor %}
     </main>
+
+    <section class="comment-btn">
+        <a href="{% url 'blog:all-comments' slug=post %}">This post's comments</a>
+        <a href="{% url 'blog:comment' pk=post.pk %}">Leave a comment</a>
+    </section>
+
 {% endblock content %}
+
+
+
+
+

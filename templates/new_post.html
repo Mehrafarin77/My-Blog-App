@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container">
+    <div class="container new-post">
     <header id="new-options">
         <nav>
             <ul>
@@ -12,10 +12,14 @@
     </header>
     <h1>New Post</h1>
     <br>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form }}
-        <button type="submit">Save</button>
+        {% for field in form %}
+            <p>{{ field.label_tag }}</p>
+            <p>{{ field }}</p>
+            <p>{{ field.errors }}</p>
+        {% endfor %}
+        <button type="submit">save</button>
     </form>
     </div>
 {% endblock content %}

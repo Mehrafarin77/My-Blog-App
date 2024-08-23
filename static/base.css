@@ -6,6 +6,13 @@
     box-sizing: border-box;
     font-family: "Noto Sans", sans-serif;
 }
+button{
+    transition: ease opacity .32s;
+    cursor: pointer;
+}
+button:hover{
+    opacity: .9;
+}
 li{
     list-style: none;
 }
@@ -25,10 +32,15 @@ li{
     width: 60%;
 }
 #main_navigation{
-    margin-top: 2rem;
+    min-width: 50rem;
+    width: 65%;
+    margin: 2rem auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+#main_navigation nav{
+    margin: 0 4rem;
 }
 #main_navigation a{
     color: #C9373A;
@@ -37,7 +49,7 @@ li{
 #latest-posts{
     width: 60%;
     text-align: center;
-    margin: 3rem auto 5rem;
+    margin: 3rem auto;
 }
 #latest-posts li a{
     text-decoration: none;
@@ -62,14 +74,26 @@ li{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition:background-color ease .36s, color ease .36s;
 }
 #latest-posts .post img{
-    width: 100px;
-    height: 100px;
+    transition: border ease .26s;
+}
+#latest-posts .post:hover{
+    background-color: #C9373A;
+    color: white;
+}
+#latest-posts .post:hover img{
+    border: white solid 3px;
+}
+
+#latest-posts .post img{
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
 }
-#latest-posts h4{
+#latest-posts h3{
     margin: 2rem 0;
 }
 #latest-posts .post p{
@@ -80,7 +104,7 @@ li{
 #about{
     width: 100%;
     padding: 2rem 0;
-    margin: 10rem auto 0;
+    margin: 12rem auto 0;
     text-align: center;
     background-color: #C9373A;
     color: white;
@@ -89,12 +113,12 @@ li{
     margin: 2rem 0;
 }
 .all-posts{
-    width: 60%;
+    width: 65%;
     margin: 1rem auto;
     padding: 2rem;
 }
 .all-posts .post{
-    transition: all ease .2s;
+    transition: all ease .3s;
 }
 .all-posts .post:hover{
     background-color: #C9373A;
@@ -114,9 +138,10 @@ li{
     flex-wrap: wrap;
 }
 .all-posts ul li{
-    width: 30%;
+    width: 33%;
     list-style: none;
 }
+
 .all-posts .post a{
     text-decoration: none;
     color: black;
@@ -124,7 +149,7 @@ li{
 }
 .all-posts .post img{
     width: 100%;
-    height: 120px;
+    height: 200px;
     border-radius: 10px;
     object-fit: cover;
 }
@@ -135,7 +160,9 @@ li{
 .post .post__content p{
     overflow: auto;
     height: 3rem;
+
 }
+
 .post{
     margin: 0 0 2rem;
     border: #C9373A solid 3px;
@@ -197,11 +224,128 @@ main {
     margin: auto;
 }
 
+form{
+    margin: 0 0 3rem 0;
+}
+main #tag{
+    background-color: #C9373A;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 5px 7px;
+}
+main #tag a{
+    color: white;
+    text-decoration: none;
+}
 
+.same-posts{
+    display: flex;
+}
+.same-posts li{
+    list-style: none;
+    width: 33%;
+}
+.same-posts li img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.wrapper{
+    width: 65%;
+    margin:2rem auto;
 
+}
 
+.comments{
+    width: 65%;
+    margin: 3rem auto;
+}
+.comments h3{
+    margin-bottom: 2rem;
+}
+.comment-btn{
+    width: auto;
+    direction: rtl;
+    margin-right: 25rem;
+    margin-bottom: 5rem;
+    display: flex;
+}
+.comment-btn a{
+    color: #C9373A;
+    margin-left: 2rem;
 
+}
+.all-comments{
+    width: 65%;
+    margin: 3rem auto;
+}
+.all-comments h1{
+    margin-bottom: 2rem;
+}
+.all-comments li{
+    margin-bottom: 1rem;
+    color: #5e5e5e;
+    list-style: decimal;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.all-comments ul{
+    padding-left: 3rem;
+}
+form{
+    box-shadow: 0 2px 8px rgba(0,0,0,0.32);
+    border-radius: 6px;
+    margin: auto;
+    padding: 1rem;
+}
 
+form button{
+    border: none;
+    padding: 10px 15px;
+    background-color: #C9373A;
+    color: white;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+form p{
+    margin-bottom: 5px;
+}
+#new-options{
+    margin: 1rem 0;
+}
+.container.new-post{
+    width: 60%;
+}
+#new-options li a{
+    background-color: #C9373A;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-size: 15px;
+}
+.container.tag, .container.logout{
+    width: 60%;
+    margin-top: 4rem;
+}
 
+.container.author{
+    width: 60%;
+    margin-top: 4rem;
+}
+.user-control span{
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-left: 3rem;
+}
+.user-control form button{
+    background-color: white;
+    color: #C9373A;
+    font-size: 1;
+}
 
-
+span.error{
+    color: #C9373A;
+    margin: 1rem;
+}

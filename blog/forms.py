@@ -1,17 +1,31 @@
-from django.forms import ModelForm
+from django import forms
 from.models import *
 
-class BlogForm(ModelForm):
+class BlogForm(forms.ModelForm):
     class Meta:
         model = Blog
-        fields = ['title', 'content', 'author', 'image', 'slug', 'tags']
+        fields = '__all__'
 
-class AuthorForm(ModelForm):
+class AuthorForm(forms.ModelForm):
     class Meta:
         model = Author
         fields = ['first_name', 'last_name']
 
-class TagForm(ModelForm):
+class TagForm(forms.ModelForm):
     class Meta:
         model = Tag
         fields = ['caption']
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comments
+        fields = '__all__'
+        labels = {
+            'which_post': 'For which post',
+            'comment_field': 'comment'
+        }
+
+
+
+
