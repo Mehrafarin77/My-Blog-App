@@ -5,12 +5,18 @@
 {% endblock title %}
 
 {% block content %}
-    <div class="all-comments">
-    <h1>All comments for {{ slug }}'s post</h1>
-        <ul>
-            {% for comment in comments %}
-                <li>{{ comment }}</li>
-            {% endfor %}
-        </ul>
+    <div class="container wrapper">
+        <div class="all-comments">
+            <ul>
+                <h1>All comments for {{ post.title|title }}'s post</h1>
+                {% for comment in comments %}
+                    <li id="comment">{{ comment.text }} <span>from <br>{{ comment.user_name|title }}</span></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="new-comment">
+            <a href="{% url 'blog:comment' pk=post.pk %}">New+</a>
+        </div>
     </div>
 {% endblock content %}

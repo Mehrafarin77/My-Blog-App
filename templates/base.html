@@ -24,7 +24,7 @@
                     | <a href="{% url 'blog:new_post' %}">New Post</a>
                 | <a href="{% url 'password_change' %}">Password Change</a> |
                 <a href="{% url 'blog:logout' %}">Log Out</a>
-                <span>Welcome {{ user.username }}!</span>
+                <span>Welcome {{ user.username }}</span>
             {% else %}
                 | <a href="{% url 'password_reset' %}">Password Reset</a>
                 | <a href="{% url 'login' %}">Log In</a> |

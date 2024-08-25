@@ -5,14 +5,21 @@
 {% endblock title %}
 
 {% block content %}
+    {% if form.errors %}
+        <div class="alert">
+            <h2>Saving your comment is failed!</h2>
+        </div>
+    {% endif %}
         <section class="comments">
-            <h1>Leave a comment</h1>
-            <form method="POST">
+            <h1>Leave a comment for {{ post.title|title }} post</h1>
+            <form action="{% url 'blog:comment' post.pk %}" method="POST">
                 {% csrf_token %}
                 {% for field in form %}
-                    <p>{{ field.label_tag }}</p>
-                    <p>{{ field }}</p>
-                    <p>{{ field.errors }}</p>
+                    <div class="{% if field.errors %}errors{% endif %}">
+                        <p>{{ field.label_tag }}</p>
+                        <p>{{ field }}</p>
+                        <p>{{ field.errors }}</p>
+                    </div>
                 {% endfor %}
                 <button type="submit">save</button>
             </form>

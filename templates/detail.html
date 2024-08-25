@@ -7,15 +7,37 @@
 {% block content %}
     <section class="summary">
         <h2>{{ post.title }}</h2>
+        {% if is_read_later %}
+            <h4 class="session">Marked for read later!</h4>
+        {% else %}
+            <form action="{% url 'blog:readlater' %}" method="POST" class="read-later">
+                {% csrf_token %}
+                <input type="hidden" name="post_id" value="{{ post.id }}">
+                {% if user.is_authenticated %}
+                    <button type="submit">Read Later</button>
+                {% endif %}
+            </form>
+        {% endif %}
         <article>
             <img src="{{ post.image.url }}" alt="{{ post.title }} image">
             <div class="info">
-                <address>By {{ post.author }}</address>
+                <address>By <a href="{% url 'blog:userprofile' %}">{% if post.author %}{{ post.author }}{% else %}Unknown{% endif %}</a></address>
                 <div>
                     Last updated on <time>{{ post.time }}</time>
                 </div>
                 <a href="{% url 'blog:delete_post' post.pk %}" type="submit">delete post</a>
                 <a href="{% url 'blog:update_post' post.pk %}" type="submit">update post</a>
+                {% if is_favorite %}
+                    <h4 class="session">Marked as favorite post!</h4>
+                {% else %}
+                    <form action="{% url 'blog:favorite' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="post_id" value="{{ post.id }}">
+                        {% if user.is_authenticated %}
+                            <button type="submit">Add to Favorite</button>
+                        {% endif %}
+                    </form>
+                {% endif %}
             </div>
         </article>
     </section>
@@ -28,7 +50,7 @@
     </main>
 
     <section class="comment-btn">
-        <a href="{% url 'blog:all-comments' slug=post %}">This post's comments</a>
+        <a href="{% url 'blog:all-comments' pk=post.pk %}">This post's comments</a>
         <a href="{% url 'blog:comment' pk=post.pk %}">Leave a comment</a>
     </section>
 

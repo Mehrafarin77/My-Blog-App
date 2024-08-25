@@ -6,11 +6,6 @@ class BlogForm(forms.ModelForm):
         model = Blog
         fields = '__all__'
 
-class AuthorForm(forms.ModelForm):
-    class Meta:
-        model = Author
-        fields = ['first_name', 'last_name']
-
 class TagForm(forms.ModelForm):
     class Meta:
         model = Tag
@@ -20,12 +15,20 @@ class TagForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comments
-        fields = '__all__'
+        exclude = ['post']
         labels = {
-            'which_post': 'For which post',
-            'comment_field': 'comment'
+            'user_name': 'Your Name',
+            'user_email': 'Your Email',
+            'text': 'Your Comment'
         }
 
-
+class AuthorForm(forms.ModelForm):
+    class Meta:
+        model = Author
+        fields = '__all__'
+        labels = {
+            'firstname': 'Your first name',
+            'lastname': 'Your last name',
+        }
 
 

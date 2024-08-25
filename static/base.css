@@ -41,6 +41,8 @@ li{
 }
 #main_navigation nav{
     margin: 0 4rem;
+    display: flex;
+    align-items: center;
 }
 #main_navigation a{
     color: #C9373A;
@@ -176,8 +178,10 @@ li{
 }
 .summary img{
     width: 40%;
+    height: 15rem;
     border-radius: 10px;
     margin: 1rem 0;
+    object-fit: cover;
 }
 .summary article{
     display: flex;
@@ -277,7 +281,8 @@ main #tag a{
 
 }
 .all-comments{
-    width: 65%;
+    width: 90%;
+    max-width: 60rem;
     margin: 3rem auto;
 }
 .all-comments h1{
@@ -289,6 +294,9 @@ main #tag a{
     list-style: decimal;
     font-weight: bold;
     font-size: 1.2rem;
+    border: solid 2px #ccc;
+    padding: 1rem;
+    border-radius: 5px;
 }
 .all-comments ul{
     padding-left: 3rem;
@@ -349,3 +357,147 @@ span.error{
     color: #C9373A;
     margin: 1rem;
 }
+.user-profile{
+    margin: 5rem auto 0;
+    width: 90%;
+    max-width: 40rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.32);
+    font-size: 1.2rem;
+}
+.user-profile .infos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.user-profile .infos img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.user-profile .infos div{
+    text-align: center;
+}
+.user-profile .btn form{
+    display: flex;
+    justify-content: center;
+}
+.user-profile .btn button{
+    width: 40%;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+#read-later{
+    box-shadow: none;
+    margin-bottom: 1rem;
+}
+
+.summary{
+    margin-top: 5rem;
+}
+ .summary .info form{
+     display: inline-block;
+    box-shadow: none;
+ }
+ .summary .info form button{
+     color: white;
+     font-size: 16px;
+ }
+.session{
+    margin-top: 2rem;
+    color: yellow;
+    font-size: 1.1rem;
+}
+.post span{
+    background-color: #e1b402;
+    font-weight: bold;
+    padding: .5rem;
+    border-radius: 5px;
+}
+.read-later{
+    box-shadow: none;
+    height: 0;
+    position: relative;
+    bottom: 2rem;
+    right: 1rem;
+}
+.read-later button{
+    color: yellow;
+    border: yellow solid 2px;
+    padding: 0.5rem 1rem;
+}
+
+.user-control img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 1rem;
+}
+.comments input{
+    padding: .5rem;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.comments textarea{
+    outline: none;
+    border: 1px solid #ccc;
+}
+.comments .errorlist li{
+    color: red;
+}
+.comments .errors label{
+    color: red;
+}
+.comments .errors input{
+    border: solid 1px red;
+    background-color: #eeabab;
+}
+
+.alert{
+    width: 90%;
+    max-width: 40rem;
+    padding: 3rem 4rem;
+    margin: 5rem auto;
+    border: 2px solid darkred;
+    background-color: rgba(253, 0, 0, 0.47);
+}
+
+#comment{
+    display: flex;
+    justify-content: space-between;
+}
+#comment span{
+    text-decoration: none;
+    margin-left: 5rem;
+    font-size: 16px;
+    text-align: right;
+}
+
+.new-comment a{
+    padding: .5rem 1rem;
+    background-color: #C9373A;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.container.wrapper{
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.summary .info form button{
+    color: yellow;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: solid yellow 2px;
+    font-size: .8rem;
+}
+
+
+
+

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    user profile
+{% endblock title %}
+
+{% block content %}
+    <div class="user-profile">
+        <div class="infos">
+            <img src="{% static 'images/me.jpg' %}" alt="user image">
+            <div>
+                <h5>Posts</h5>
+                <h5>10</h5>
+            </div>
+            <div>
+                <h5>Followers</h5>
+                <h5>4</h5>
+            </div>
+            <div>
+                <h5>Followings</h5>
+                <h5>6</h5>
+            </div>
+        </div>
+        <div class="btn">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <button type="submit">Follow</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

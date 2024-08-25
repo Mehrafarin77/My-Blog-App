@@ -16,6 +16,12 @@
                             <div class="post__content">
                                 <h3>{{ post.title }}</h3>
                                 <p>{{ post.content }}</p>
+                                {% if fav_post == post.id %}
+                                    <span>Favorite!</span>
+                                {% endif %}
+                                {% if read_later == post.id %}
+                                    <span>Read Later!</span>
+                                {% endif %}
                             </div>
                         </a>
                     </article>
