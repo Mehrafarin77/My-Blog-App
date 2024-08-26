@@ -6,6 +6,11 @@
 
 {% block content %}
     <section class="all-posts">
+        <form class="search-bar" method="POST" action="{% url 'blog:search' %}" >
+            {% csrf_token %}
+            <input type="search" name="search">
+            <button type="submit">Search</button>
+        </form>
         <h2>My collected posts</h2>
         <ul>
             {% for post in posts %}

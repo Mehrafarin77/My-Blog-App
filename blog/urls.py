@@ -19,5 +19,6 @@ urlpatterns = [
     path('new-tag/', NewTagView.as_view(), name='new_tag'),
     path('logout/', logout, name='logout'),
     path('profiles/', UserProfileView.as_view(), name='userprofile'),
+    path('search/', SearchView.as_view(), name='search')
 
 ]

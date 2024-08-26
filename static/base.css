@@ -39,6 +39,9 @@ li{
     align-items: center;
     justify-content: space-around;
 }
+#main_navigation .user-control a{
+    margin-left: 1rem;
+}
 #main_navigation nav{
     margin: 0 4rem;
     display: flex;
@@ -498,6 +501,16 @@ span.error{
     font-size: .8rem;
 }
 
-
-
-
+.all-posts .search-bar{
+    box-shadow: none;
+}
+.all-posts .search-bar input{
+    padding: .5rem 2rem;
+    outline: none;
+    border: 2px #ccc solid;
+    border-radius: 4px;
+    margin-right: 1rem;
+    width: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+}

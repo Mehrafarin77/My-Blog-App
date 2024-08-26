@@ -151,6 +151,23 @@ class NewAuthorView(CreateView):
     success_url = reverse_lazy('blog:new_post')
 
 
+class SearchView(View):
+    def post(self, request):
+        content = request.POST['search']
+        posts = Blog.objects.filter(title__contains= content) | Blog.objects.filter(content__contains=content)
+        print(posts)
+        return render(request, 'all_posts.html', {
+            'posts': posts
+        })
+
+
+
+
+
+
+
+
+
 
 
 
