@@ -11,7 +11,14 @@
             <input type="search" name="search">
             <button type="submit">Search</button>
         </form>
-        <h2>My collected posts</h2>
+        <h1 id="post_not_found">{{ msg }}</h1>
+        <h2>
+            {% if is_searched %}
+                Result for your search
+            {% else %}
+                All Posts
+            {% endif %}
+        </h2>
         <ul>
             {% for post in posts %}
                 <li>

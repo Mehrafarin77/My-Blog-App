@@ -514,3 +514,7 @@ span.error{
     font-size: 1.1rem;
     font-weight: bold;
 }
+#post_not_found{
+    color: #C9373A;
+    margin-left: 1rem;
+}
